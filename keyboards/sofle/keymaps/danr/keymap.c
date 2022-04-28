@@ -11,10 +11,8 @@ enum sofle_layers {
 
 enum custom_keycodes {
     KC_QWERTY = SAFE_RANGE,
-    // KC_ROLL_LAYOUT,
-    KC_COLEMAK,
-    // KC_COLEMAK_DH, // if we want a key to change layout
-    // KC_COLEMAK_DH_SOFT, // if we want a key to change layout
+    KC_COLEMAK_DH,
+    KC_LAYOUT,
     KC_LOWER,
     KC_RAISE,
     KC_ADJUST,
@@ -22,8 +20,7 @@ enum custom_keycodes {
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
-    KC_DLINE,
-    KC_LAYOUT
+    KC_DLINE
 };
 
 
@@ -178,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT( \
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-    RESET, KC_NO, DF(0), DF(1), CG_SWAP, KC_NO,                 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+    RESET, KC_NO, KC_QWERTY, KC_COLEMAK_DH, CG_SWAP, KC_NO,                 KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
     KC_LAYOUT, KC_NO, KC_NO, KC_NO, KC_NO, KC_UNDS,               KC_NO, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO, \
     CG_TOGG, KC_NO, KC_NO, KC_NO, KC_NO, KC_PLUS, KC_NO,      KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
@@ -291,6 +288,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+        case KC_COLEMAK_DH:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_COLEMAK_DH);
             }
             return false;
         case KC_LOWER:
@@ -444,7 +446,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef ENCODER_ENABLE
 
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
             tap_code(KC_VOLU);
@@ -458,6 +460,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_MS_WH_UP);
         }
     }
+    return false;
 }
 
 #endif
