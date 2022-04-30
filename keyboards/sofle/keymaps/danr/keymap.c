@@ -26,7 +26,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * QWERTY
+ * QWERTY NOT UPDATED
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 /*
- * COLEMAK
+ * COLEMAK NOT UPDATED
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  `   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_LGUI,KC_LALT,KC_LCTRL,KC_LOWER, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, KC_GRV \
 ), */
 
-/* LOWER
+/* LOWER NOT UPDATED
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -130,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_P0, KC_PDOT, KC_PENT, KC_TRNS, KC_TRNS,      KC_TRNS, MO(4), KC_TRNS, KC_TRNS, KC_TRNS),
 
 
-/* RAISE
+/* RAISE NOT UPDATED
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_DOT, KC_RCBR, KC_RPRN, KC_RBRC, KC_GT, KC_TRNS,      KC_TRNS, KC_NO, KC_LSTRT, KC_NO, KC_LEND, KC_NO, KC_TRNS, \
                     KC_TRNS, KC_TRNS, KC_TRNS, MO(4), KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
-/* ADJUST
+/* ADJUST NOT UPDATED
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -172,12 +172,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX , XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, \
                    _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______ \
   ) */
-
 [_ADJUST] = LAYOUT( \
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
     RESET, KC_NO, KC_QWERTY, KC_COLEMAK_DH, CG_TOGG, KC_NO,     KC_NO, KC_LSTRT, KC_NO, KC_LEND, KC_NO, KC_NO, \
-    KC_LAYOUT, KC_NO, KC_NO, KC_NO, KC_NO, KC_UNDS,             KC_NO, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO, \
-    KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_PLUS, KC_NO,      KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, \
+    KC_LAYOUT, KC_EXCLAIM, KC_AT, KC_HASH, KC_DOLLAR, KC_UNDS,             KC_NO, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO, \
+    KC_LSFT, KC_NO, KC_NO, KC_CIRC, KC_AMPR, KC_PLUS, KC_NO,      KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, \
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 
 };
