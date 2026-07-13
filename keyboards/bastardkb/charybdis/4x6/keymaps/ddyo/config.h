@@ -26,7 +26,19 @@
 
 /* Charybdis-specific features. */
 
-/* Custom Splinky v3 wiring. */
+/*
+ * Custom matrix wiring (Sea-Picro / Splinky bottom pins GP12–GP16).
+ *
+ * Stock Charybdis pins used the ADC GPIOs:
+ *   rows { GP29, GP26, GP5, GP4, GP9 }
+ *   cols { GP27, GP28, GP21, GP6, GP7, GP8 }
+ * Those were moved onto GP12–GP16 so GP26 is free for the FSR, and so
+ * GP21 can be used as the trackball CS (stock CS was GP16).
+ *
+ * Left and right maps differ: the trackball half (right) keeps CS on GP21,
+ * so col2 lands on GP12 there while the left uses GP16 for col2.
+ *
+ */
 #undef MATRIX_ROW_PINS
 #define MATRIX_ROW_PINS \
     { GP15, GP12, GP5, GP4, GP9 }
